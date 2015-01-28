@@ -12,17 +12,14 @@
     <script src="//mechanoid.github.io/cdt-callee//callee.js"></script>
 
     <script type="application/javascript">
-      // living callee example
-      window.callee()
+    console.log("cross domain request:", "as usual");
 
-      .done(function(data){
-        console.log("Your data is:", data);
-      })
+    window.callee.callData()
+    .done(function(data){
+      console.log("Your data is:", data);
+    })
 
-      .fail(function(xhr, status, error){
-        console.log("Code:", xhr.status)
-        throw('Callee Crossdomain Exception');
-      });
+    window.callee.callData("callee.jsonpCallback")
     </script>
 </body>
 </html>
