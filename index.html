@@ -5,6 +5,24 @@
   <title>CDT-Caller</title>
 </head>
 <body>
+  <h1>Caller Service</h1>
+    <p>Calling the Callee Service Script and waiting for Cross-Site-Problems</p>
 
+    <script src="//code.jquery.com/jquery-2.1.3.js"></script>
+    <script src="//mechanoid.github.io/cdt-callee//callee.js"></script>
+
+    <script type="application/javascript">
+      // living callee example
+      window.callee()
+
+      .done(function(data){
+        console.log("Your data is:", data);
+      })
+
+      .fail(function(xhr, status, error){
+        console.log("Code:", xhr.status)
+        throw('Callee Crossdomain Exception');
+      });
+    </script>
 </body>
 </html>
